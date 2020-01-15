@@ -31,4 +31,21 @@ public interface RestaurantDaoInterface {
 	 */
 	public List<Restaurant> getAllRestaurants();
 	
+	/**
+	 * Delete a restaurant matching the id param
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteRestaurant(String id);
+	
+	/**
+	 * Updates the restaurant matching the id param
+	 * @param id
+	 * @param name
+	 * @param address
+	 * @param rating
+	 * @return
+	 */
+	public Restaurant updateRestaurant(Restaurant restaurant);
+	
 }

@@ -42,13 +42,14 @@
         </property>
     </bean>
 
-	<bean id="favoritesTransactionManager"
-		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<bean id="favoritesTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
 	<tx:annotation-driven transaction-manager="favoritesTransactionManager" />
 
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
 </beans>

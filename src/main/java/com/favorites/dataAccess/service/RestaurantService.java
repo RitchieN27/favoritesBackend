@@ -4,12 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.favorites.dataAccess.dao.RestaurantDaoInterface;
 import com.favorites.dataAccess.entity.Restaurant;
 
-@Component("restaurantService")
+@Service("restaurantService")
 public class RestaurantService implements RestaurantServiceInterface {
 
 	/**
@@ -39,6 +39,16 @@ public class RestaurantService implements RestaurantServiceInterface {
 	@Override
 	public List<Restaurant> getAllRestaurants() {
 		return restaurantDAO.getAllRestaurants();
+	}
+
+	@Override
+	public boolean deleteRestaurant(String id) {
+		return restaurantDAO.deleteRestaurant(id);
+	}
+
+	@Override
+	public Restaurant updateRestaurant(Restaurant restaurant) {
+		return restaurantDAO.updateRestaurant(restaurant);
 	}
 
 }
